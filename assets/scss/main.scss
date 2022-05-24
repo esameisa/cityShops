@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+$color1: #222f3e;
+$color2: #131921;
+$color3: #364759;
+$color4: #febd68;
+$color5: #e67a00;
+
+$colors: $color1,
+$color2,
+$color3,
+$color4,
+$color5;
+
+// generate .color1 => 12 and .bg-color1 => 12
+@for $i from 1 through length($colors) {
+  .color#{$i} {
+    color: nth($colors, $i) !important;
+  }
+
+  .bg-color#{$i} {
+    background: nth($colors, $i) !important;
+  }
+}
+
+$main-font-family: 'Almarai';
+
+.v-application {
+  font-family: $main-font-family, sans-serif !important;
+}
+
+.container--fluid {
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+
+  @media (max-width: 768px) {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+}
+
+.product-title {
+  color: $color2;
+  text-decoration: none;
+
+  &:hover {
+    color: $color4;
+  }
+}
+
+// .v-sheet.v-card:not(.v-sheet--outlined) {
+//   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1) !important;
+//   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1) !important;
+// }
+
+.page-header {
+  padding: 3rem 0;
+  background-color: #ebebeb;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
